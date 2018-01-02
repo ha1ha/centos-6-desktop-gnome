@@ -106,6 +106,18 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
+# Activer le dépôt [cr] avec une priorité de 1
+if ! rpm -q centos-release-cr 2>&1 > /dev/null ; then
+  echo "::"
+  echo -e ":: Configuration du dépôt de paquets CR... \c"
+  sleep $DELAY
+  yum -y install centos-release-cr >> $LOG 2>&1
+  cat $CWD/config/yum/CentOS-CR.repo > /etc/yum.repos.d/CentOS-CR.repo
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
 echo
 
 exit 0

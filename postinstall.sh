@@ -118,6 +118,16 @@ if ! rpm -q centos-release-cr 2>&1 > /dev/null ; then
   echo
 fi
 
+# Installer le plugin Yum-Priorities
+if ! rpm -q yum-plugin-priorities 2>&1 > /dev/null ; then
+  echo "::"
+  echo -e ":: Installation du plugin Yum-Priorities... \c"
+  yum -y install yum-plugin-priorities >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
 echo
 
 exit 0

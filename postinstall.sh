@@ -56,6 +56,26 @@ echo "       # tail -f /tmp/postinstall.log"
 echo
 sleep $DELAY
 
+# Arrêt de PackageKit qui entre en conflit avec Yum
+if ps aux | grep packagekitd | grep -v grep 2>&1 > /dev/null ; then
+  echo "::"
+  echo -e ":: Arrêt de PackageKit... \c"
+  killall -9 packagekitd >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
+# Suppression de PackageKit
+if rpm -q PackageKit > /dev/null ; then
+  echo "::"
+  echo -e ":: Suppression de PackageKit... \c"
+  yum -y remove PackageKit >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
 # Mise à jour initiale
 echo -e ":: Mise à jour initiale du système... \c"
 yum -y update >> $LOG 2>&1

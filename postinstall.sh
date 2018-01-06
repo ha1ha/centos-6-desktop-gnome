@@ -14,6 +14,14 @@ if [ $EUID -ne 0 ] ; then
   exit 1
 fi
 
+# Déterminer l'architecture
+if [ -z "$ARCH" ]; then
+  case "$(uname -m)" in
+    i?86) ARCH=i386 ;;
+       *) ARCH=$(uname -m) ;;
+  esac
+fi
+
 # Répertoire courant
 CWD=$(pwd)
 
@@ -148,6 +156,18 @@ if ! rpm -q nux-dextop-release 2>&1 > /dev/null ; then
   yum -y localinstall $CWD/config/yum/nux-dextop-release-*.rpm >> $LOG 2>&1
   rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-nux.ro >> $LOG 2>&1
   cat $CWD/config/yum/nux-dextop.repo > /etc/yum.repos.d/nux-dextop.repo
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
+# Activer le dépôt [adobe-linux-$ARCH] avec une priorité de 10
+if ! rpm -q adobe-release-$ARCH 2>&1 > /dev/null ; then
+  echo "::"
+  echo -e ":: Configuration du dépôt de paquets Adobe... \c"
+  yum -y localinstall $CWD/config/yum/adobe-release-$ARCH-*.rpm >> $LOG 2>&1
+  rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux >> $LOG 2>&1
+  cat $CWD/config/yum/adobe-linux-$ARCH.repo > /etc/yum.repos.d/adobe-linux-$ARCH.repo
   echo -e "[${VERT}OK${GRIS}] \c"
   sleep $DELAY
   echo

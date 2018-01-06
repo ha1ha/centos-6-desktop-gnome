@@ -12,7 +12,7 @@ CWD=$(pwd)
 echo
 echo ":: Installation du profil par défaut."
 echo
-tar xvzf $CWD/gnome/config.tar.gz -C /etc/skel/
+tar xvzf $CWD/config/gnome/config.tar.gz -C /etc/skel/
 
 exit 0
 

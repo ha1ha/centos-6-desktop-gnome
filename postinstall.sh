@@ -76,6 +76,14 @@ if rpm -q PackageKit > /dev/null ; then
   echo "::"
 fi
 
+# Supprimer les firmwares obsolètes
+echo -e ":: Suppression des firmwares obsolètes... \c"
+yum -y remove b43-openfwwf b43-fwcutter >> $LOG 2>&1
+echo -e "[${VERT}OK${GRIS}] \c"
+sleep $DELAY
+echo
+echo "::"
+
 # Mise à jour initiale
 echo -e ":: Mise à jour initiale du système... \c"
 yum -y update >> $LOG 2>&1

@@ -1,0 +1,85 @@
+# GNOME
+bluecurve-gtk-themes
+bluecurve-metacity-theme
+elementary-xfce-icon-theme
+freetype-infinality
+gconf-editor
+gnome-backgrounds
+gnome-disk-utility
+gnome-games
+gnome-utils
+gtk-murrine-engine
+
+# Polices TrueType
+abattis-cantarell-fonts
+bitmap-fixed-fonts
+bitmap-lucida-typewriter-fonts
+gnu-free-mono-fonts
+gnu-free-sans-fonts
+gnu-free-serif-fonts
+webcore-fonts
+webcore-fonts-vista
+ 
+# Internet
+filezilla
+firefox
+mozilla-adblockplus
+pidgin
+pidgin-otr
+pidgin-privacy-please
+thunderbird
+transmission-gtk
+
+# Bureautique
+evince
+libreoffice
+libreoffice-langpack-de
+libreoffice-langpack-fr
+
+# Graphisme
+gimp
+gimp-data-extras
+gimp-dds-plugin
+gimp-gap
+gimp-help
+gimp-help-browser
+gimp-layer-via-copy-cut
+gimp-paint-studio
+gimp-save-for-web
+gimp-separate+
+gimp-wavelet-denoise-plugin
+gthumb
+inkscape
+inkscape-view
+scribus
+simple-scan
+xsane
+xsane-gimp
+
+# Son & Vidéo
+asunder
+audacious
+audacity-freeworld
+ffmpegthumbnailer
+flash-plugin
+gnome-mplayer
+gstreamer
+gstreamer-ffmpeg
+gstreamer-plugins-base
+gstreamer-plugins-good
+gstreamer-plugins-bad
+gstreamer-plugins-bad-free
+gstreamer-plugins-bad-nonfree
+gstreamer-plugins-ugly
+libdvdcss
+openshot
+vlc
+vlc-extras
+
+# Accessoires & Utilitaires
+brasero
+brasero-nautilus
+conky
+file-roller
+gedit
+gnote

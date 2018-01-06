@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Video Editor
+Name[de]=Video-Bearbeitungs-Software
+Name[fr]=Éditeur vidéo
+Comment=Openshot
+Exec=openshot %F
+Terminal=false
+Type=Application
+Icon=openshot
+Categories=GNOME;GTK;AudioVideo;Video;AudioVideoEditing;
+MimeType=application/vnd.openshot-project;
+X-AppInstall-Package=openshot
+X-Ubuntu-Gettext-Domain=OpenShot

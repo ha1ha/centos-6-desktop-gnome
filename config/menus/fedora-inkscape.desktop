@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Vector Graphics
+Name[de]=Vektorgrafik
+Name[fr]=Images vectorielles
+Comment=Inkscape
+Version=1.0
+Type=Application
+Categories=Graphics;VectorGraphics;GTK;
+MimeType=image/svg+xml;image/svg+xml-compressed;image/cgm;image/x-wmf;application/vnd.corel-draw;application/x-xccx;application/x-xcgm;application/x-xcdt;application/x-xsk1;application/x-xcmx;image/x-xcdr;
+Exec=inkscape %F
+TryExec=inkscape
+Terminal=false
+StartupNotify=true
+Icon=inkscape
+X-Desktop-File-Install-Version=0.15

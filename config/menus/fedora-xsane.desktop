@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Scanner Tool
+Name[de]=Scannersoftware
+Name[fr]=Acquisition d'images avancée
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Comment=XSane
+Exec=xsane
+TryExec=xsane
+Icon=scanner
+Terminal=false
+Categories=Graphics;
+StartupNotify=true

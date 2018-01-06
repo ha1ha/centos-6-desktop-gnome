@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Screenshot
+Name[de]=Bildschirmfoto
+Name[fr]=Capture d'écran
+Comment=GNOME Screenshot
+Exec=gnome-screenshot --interactive
+Terminal=false
+Type=Application
+Icon=applets-screenshooter
+StartupNotify=true
+Categories=GTK;GNOME;Utility;
+NotShowIn=KDE;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-utils
+X-GNOME-Bugzilla-Component=screenshot
+X-GNOME-Bugzilla-OtherBinaries=gnome-panel-screenshot
+X-Desktop-File-Install-Version=0.15

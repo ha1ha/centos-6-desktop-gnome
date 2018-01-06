@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Office Suite
+Name[de]=Bürosuite
+Name[fr]=Suite bureautique
+Comment=Libre Office
+Version=1.0
+Terminal=false
+#Icon=libreoffice-startcenter
+Icon=applications-office
+Type=Application
+Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;X-MandrivaLinux-Office-Other;
+Exec=libreoffice %U
+StartupNotify=true

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=BitTorrent Client
+Name[de]=BitTorrent-Programm
+Name[fr]=Téléchargement BitTorrent
+Comment=Transmission
+Exec=transmission-gtk %F
+#Icon=transmission
+Icon=applications-filesharing
+Terminal=false
+TryExec=transmission-gtk
+Type=Application
+MimeType=application/x-bittorrent;
+Categories=Network;FileTransfer;P2P;GTK;

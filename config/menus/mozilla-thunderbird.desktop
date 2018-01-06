@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Electronic Mail
+Name[de]=Elektronische Post
+Name[fr]=Courrier électronique
+Comment=Mozilla Thunderbird
+Version=1.0
+Encoding=UTF-8
+Exec=thunderbird
+TryExec=thunderbird
+#Icon=thunderbird
+Icon=applications-mail
+Terminal=false
+Type=Application
+StartupWMClass=Thunderbird-bin
+MimeType=message/rfc822;
+X-Desktop-File-Install-Version=0.15
+Categories=Email;Network;

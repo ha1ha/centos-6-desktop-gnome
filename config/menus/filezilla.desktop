@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=FTP Client
+Name[de]=FTP-Programm
+Name[fr]=Téléchargement FTP
+Comment=FileZilla
+Exec=filezilla
+Terminal=false
+#Icon=filezilla
+Icon=folder-remote-ftp
+Type=Application
+Categories=Network;FileTransfer;
+Version=1.0
+X-Desktop-File-Install-Version=0.15

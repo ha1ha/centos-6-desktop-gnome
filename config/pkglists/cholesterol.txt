@@ -1,0 +1,39 @@
+# Paquets à supprimer
+
+# Polices exotiques
+abyssinica-fonts
+cjkuni-fonts-common
+cjkuni-uming-fonts
+jomolhari-fonts
+khmeros-base-fonts
+khmeros-fonts-common
+kurdit-unikurd-web-fonts
+lklug-fonts
+lohit-assamese-fonts
+lohit-bengali-fonts
+lohit-devanagari-fonts
+lohit-gujarati-fonts
+lohit-kannada-fonts
+lohit-oriya-fonts
+lohit-punjabi-fonts
+lohit-tamil-fonts
+lohit-telugu-fonts
+madan-fonts
+paktype-fonts-common
+paktype-naqsh-fonts
+paktype-tehreer-fonts
+sil-padauk-fonts
+smc-fonts-common-04.2-11.el6.noarch
+smc-meera-fonts-04.2-11.el6.noarch
+thai-scalable-fonts-common
+thai-scalable-waree-fonts
+tibetan-machine-uni-fonts
+un-core-dotum-fonts
+un-core-fonts-common
+wqy-zenhei-fonts
+
+# Automatic Bug Reporting Tool
+abrt
+
+# PackageKit
+PackageKit

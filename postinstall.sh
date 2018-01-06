@@ -63,6 +63,16 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
+# Basculer SELinux en mode permissif
+echo "::"
+echo -e ":: Basculer SELinux en mode permissif... \c"
+sleep $DELAY
+sed -i -e 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
+setenforce 0
+echo -e "[${VERT}OK${GRIS}] \c"
+sleep $DELAY
+echo
+
 # Pour l'instant on n'utilise que l'IPv4
 if ! grep "net.ipv6.conf" /etc/sysctl.conf 2>&1 > /dev/null ; then
   echo "::"

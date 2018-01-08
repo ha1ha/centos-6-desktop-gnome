@@ -276,6 +276,41 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
+# Installer les polices Apple
+if [ ! -d /usr/share/fonts/apple-fonts ]; then
+  cd /tmp
+  rm -rf /usr/share/fonts/apple-fonts
+  echo "::"
+  echo -e ":: Installation des polices TrueType Apple... \c"
+  wget -c https://www.microlinux.fr/download/FontApple.tar.xz >> $LOG 2>&1
+  mkdir /usr/share/fonts/apple-fonts
+  tar xvf FontApple.tar.xz >> $LOG 2>&1
+  mv Lucida*.ttf Monaco.ttf /usr/share/fonts/apple-fonts/
+  fc-cache -f -v >> $LOG 2>&1
+  rm -f FontApple.tar.xz
+  cd - >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
+# Installer la police Eurostile
+if [ ! -d /usr/share/fonts/eurostile ]; then
+  cd /tmp
+  rm -rf /usr/share/fonts/eurostile
+  echo "::"
+  echo -e ":: Installation de la police TrueType Eurostile... \c"
+  wget -c https://www.microlinux.fr/download/Eurostile.zip >> $LOG 2>&1
+  unzip Eurostile.zip -d /usr/share/fonts/ >> $LOG 2>&1
+  mv /usr/share/fonts/Eurostile /usr/share/fonts/eurostile
+  fc-cache -f -v >> $LOG 2>&1
+  rm -f Eurostile.zip
+  cd - >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
 echo
 
 exit 0

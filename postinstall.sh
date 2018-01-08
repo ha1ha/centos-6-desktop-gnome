@@ -327,6 +327,22 @@ if [ ! -f /usr/share/backgrounds/.microlinux ]; then
   echo
 fi
 
+# Avertissement final
+echo
+echo "     L'installation du bureau est terminée. À présent," 
+echo "     vous pouvez créer un ou plusieurs utilisateurs :"
+echo
+echo "       # useradd -c \"Prénom Nom\" utilisateur"
+echo "       # passwd utilisateur"
+echo
+echo "     Redémarrez le PC et supprimez l'utilisateur initial :"
+echo
+echo "       # userdel -r install"
+echo
+echo "     Notez que SELinux est actuellement en mode permissif."
+echo
+sleep $DELAY
+
 echo
 
 exit 0

@@ -311,6 +311,22 @@ if [ ! -d /usr/share/fonts/eurostile ]; then
   echo
 fi
 
+# Installer les fonds d'écran Microlinux
+if [ ! -f /usr/share/backgrounds/.microlinux ]; then
+  cd /tmp
+  echo "::"
+  echo -e ":: Installation des fonds d'écran Microlinux... \c"
+  wget -c https://www.microlinux.fr/download/microlinux-wallpapers.tar.gz >> $LOG 2>&1
+  tar xvzf microlinux-wallpapers.tar.gz >> $LOG 2>&1 
+  cp -f microlinux-wallpapers/* /usr/share/backgrounds/ >> $LOG 2>&1
+  touch /usr/share/backgrounds/.microlinux >> $LOG 2>&1
+  rm -f microlinux-wallpapers.tar.gz
+  cd - >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
 echo
 
 exit 0

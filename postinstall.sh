@@ -258,6 +258,20 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
+# Installer Gtkcdlabel
+if [ ! -f /usr/bin/gtkcdlabel.py ]; then
+  echo "::"
+  echo -e ":: Installation de l'application Gtkcdlabel... \c"
+  cd /tmp
+  wget -c https://www.microlinux.fr/download/gtkcdlabel-1.15.tar.bz2 >> $LOG 2>&1
+  tar xvjf gtkcdlabel-1.15.tar.bz2 -C / >> $LOG 2>&1
+  rm -f gtkcdlabel-1.15.tar.bz2
+  cd - >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+fi
+
 # Personnaliser les entrées du menu GNOME
 echo "::"
 echo -e ":: Personnalisation des entrées de menu GNOME... \c"

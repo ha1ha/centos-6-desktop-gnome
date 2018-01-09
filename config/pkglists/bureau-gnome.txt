@@ -37,6 +37,7 @@ libreoffice-langpack-de
 libreoffice-langpack-fr
 
 # Graphisme
+cdlabelgen
 gimp
 gimp-data-extras
 gimp-dds-plugin
@@ -73,6 +74,7 @@ gstreamer-plugins-bad-nonfree
 gstreamer-plugins-ugly
 libdvdcss
 openshot
+python-CDDB
 vlc
 vlc-extras
 

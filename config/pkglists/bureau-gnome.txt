@@ -85,5 +85,6 @@ brasero
 brasero-nautilus
 conky
 file-roller
+galculator
 gedit
 gnote

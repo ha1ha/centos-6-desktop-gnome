@@ -110,6 +110,11 @@ if ! grep "net.ipv6.conf" /etc/sysctl.conf 2>&1 > /dev/null ; then
   echo "# Désactiver l'IPv6" >> /etc/sysctl.conf
   echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
   echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+  if [ -f /etc/postfix/main.cf ] ; then
+    sed -i -e 's/inet_interfaces = localhost/inet_interfaces = 127.0.0.1/g' \
+      /etc/postfix/main.cf
+  fi
+  chkconfig ip6tables off
   echo -e "[${VERT}OK${GRIS}] \c"
   sleep $DELAY
   echo

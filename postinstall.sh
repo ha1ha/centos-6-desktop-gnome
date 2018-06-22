@@ -143,19 +143,19 @@ if ! rpm -q centos-release-cr 2>&1 > /dev/null ; then
   echo
 fi
 
-echo 
-
-exit 0
-
 # Suppression de PackageKit
 if rpm -q PackageKit > /dev/null ; then
+  echo "::"
   echo -e ":: Suppression de PackageKit... \c"
   yum -y remove PackageKit >> $LOG 2>&1
   echo -e "[${VERT}OK${GRIS}] \c"
   sleep $DELAY
   echo
-  echo "::"
 fi
+
+echo 
+
+exit 0
 
 # Supprimer les firmwares obsolètes
 echo -e ":: Suppression des firmwares obsolètes... \c"

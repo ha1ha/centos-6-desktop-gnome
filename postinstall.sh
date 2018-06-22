@@ -169,11 +169,6 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
-
-echo 
-
-exit 0
-
 # Installer le plugin Yum-Priorities
 if ! rpm -q yum-plugin-priorities 2>&1 > /dev/null ; then
   echo "::"
@@ -196,6 +191,11 @@ if ! rpm -q epel-release 2>&1 > /dev/null ; then
   sleep $DELAY
   echo
 fi
+
+
+echo 
+
+exit 0
 
 # Activer le dépôt [nux-dextop] avec une priorité de 10
 if ! rpm -q nux-dextop-release 2>&1 > /dev/null ; then

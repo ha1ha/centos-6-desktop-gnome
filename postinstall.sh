@@ -192,11 +192,6 @@ if ! rpm -q epel-release 2>&1 > /dev/null ; then
   echo
 fi
 
-
-echo 
-
-exit 0
-
 # Activer le dépôt [nux-dextop] avec une priorité de 10
 if ! rpm -q nux-dextop-release 2>&1 > /dev/null ; then
   echo "::"
@@ -208,6 +203,11 @@ if ! rpm -q nux-dextop-release 2>&1 > /dev/null ; then
   sleep $DELAY
   echo
 fi
+
+
+echo 
+
+exit 0
 
 # Activer le dépôt [adobe-linux-$ARCH] avec une priorité de 10
 if ! rpm -q adobe-release-$ARCH 2>&1 > /dev/null ; then

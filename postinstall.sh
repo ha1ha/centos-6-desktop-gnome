@@ -56,43 +56,7 @@ echo "       # tail -f /tmp/postinstall.log"
 echo
 sleep $DELAY
 
-# Arrêt de PackageKit qui entre en conflit avec Yum
-if ps aux | grep packagekitd | grep -v grep 2>&1 > /dev/null ; then
-  echo -e ":: Arrêt de PackageKit... \c"
-  killall -9 packagekitd >> $LOG 2>&1
-  echo -e "[${VERT}OK${GRIS}] \c"
-  sleep $DELAY
-  echo
-  echo "::"
-fi
-
-# Suppression de PackageKit
-if rpm -q PackageKit > /dev/null ; then
-  echo -e ":: Suppression de PackageKit... \c"
-  yum -y remove PackageKit >> $LOG 2>&1
-  echo -e "[${VERT}OK${GRIS}] \c"
-  sleep $DELAY
-  echo
-  echo "::"
-fi
-
-# Supprimer les firmwares obsolètes
-echo -e ":: Suppression des firmwares obsolètes... \c"
-yum -y remove b43-openfwwf b43-fwcutter >> $LOG 2>&1
-echo -e "[${VERT}OK${GRIS}] \c"
-sleep $DELAY
-echo
-echo "::"
-
-# Mise à jour initiale
-echo -e ":: Mise à jour initiale du système... \c"
-yum -y update >> $LOG 2>&1
-echo -e "[${VERT}OK${GRIS}] \c"
-sleep $DELAY
-echo
-
 # Basculer SELinux en mode permissif
-echo "::"
 echo -e ":: Basculer SELinux en mode permissif... \c"
 sleep $DELAY
 sed -i -e 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
@@ -143,6 +107,47 @@ echo "::"
 echo -e ":: Configuration de Vim... \c"
 sleep $DELAY
 cat $CWD/config/vim/vimrc > /etc/vimrc
+echo -e "[${VERT}OK${GRIS}] \c"
+sleep $DELAY
+echo
+
+
+echo 
+
+exit 0
+
+# Arrêt de PackageKit qui entre en conflit avec Yum
+if ps aux | grep packagekitd | grep -v grep 2>&1 > /dev/null ; then
+  echo "::"
+  echo -e ":: Arrêt de PackageKit... \c"
+  killall -9 packagekitd >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+  echo "::"
+fi
+
+# Suppression de PackageKit
+if rpm -q PackageKit > /dev/null ; then
+  echo -e ":: Suppression de PackageKit... \c"
+  yum -y remove PackageKit >> $LOG 2>&1
+  echo -e "[${VERT}OK${GRIS}] \c"
+  sleep $DELAY
+  echo
+  echo "::"
+fi
+
+# Supprimer les firmwares obsolètes
+echo -e ":: Suppression des firmwares obsolètes... \c"
+yum -y remove b43-openfwwf b43-fwcutter >> $LOG 2>&1
+echo -e "[${VERT}OK${GRIS}] \c"
+sleep $DELAY
+echo
+echo "::"
+
+# Mise à jour initiale
+echo -e ":: Mise à jour initiale du système... \c"
+yum -y update >> $LOG 2>&1
 echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo

@@ -216,11 +216,6 @@ if ! rpm -q adobe-release-$ARCH 2>&1 > /dev/null ; then
   echo
 fi
 
-
-echo 
-
-exit 0
-
 # Configurer les dépôts [elrepo], [elrepo-kernel], etc. sans les activer
 if ! rpm -q elrepo-release 2>&1 > /dev/null ; then
   echo "::"
@@ -232,6 +227,10 @@ if ! rpm -q elrepo-release 2>&1 > /dev/null ; then
   sleep $DELAY
   echo
 fi
+
+echo 
+
+exit 0
 
 # Synchroniser les dépôts de paquets
 echo "::"

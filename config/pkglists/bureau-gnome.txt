@@ -23,7 +23,7 @@ webcore-fonts-vista
 # Internet
 filezilla
 firefox
-mozilla-adblockplus
+# mozilla-adblockplus
 pidgin
 pidgin-otr
 pidgin-privacy-please

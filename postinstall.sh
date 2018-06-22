@@ -161,17 +161,18 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
-
-echo 
-
-exit 0
-
 # Mise à jour initiale
+echo "::"
 echo -e ":: Mise à jour initiale du système... \c"
 yum -y update >> $LOG 2>&1
 echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
+
+
+echo 
+
+exit 0
 
 # Installer le plugin Yum-Priorities
 if ! rpm -q yum-plugin-priorities 2>&1 > /dev/null ; then

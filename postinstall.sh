@@ -121,6 +121,15 @@ if ps aux | grep packagekitd | grep -v grep 2>&1 > /dev/null ; then
   echo
 fi
 
+# Activer les dépôts [base], [updates] et [extras] avec une priorité de 1
+echo "::"
+echo -e ":: Configuration des dépôts de paquets officiels... \c"
+sleep $DELAY
+cat $CWD/config/yum/CentOS-Base.repo > /etc/yum.repos.d/CentOS-Base.repo
+sed -i -e 's/installonly_limit=5/installonly_limit=2/g' /etc/yum.conf
+echo -e "[${VERT}OK${GRIS}] \c"
+sleep $DELAY
+echo
 
 echo 
 
@@ -147,16 +156,6 @@ echo "::"
 # Mise à jour initiale
 echo -e ":: Mise à jour initiale du système... \c"
 yum -y update >> $LOG 2>&1
-echo -e "[${VERT}OK${GRIS}] \c"
-sleep $DELAY
-echo
-
-# Activer les dépôts [base], [updates] et [extras] avec une priorité de 1
-echo "::"
-echo -e ":: Configuration des dépôts de paquets officiels... \c"
-sleep $DELAY
-cat $CWD/config/yum/CentOS-Base.repo > /etc/yum.repos.d/CentOS-Base.repo
-sed -i -e 's/installonly_limit=5/installonly_limit=2/g' /etc/yum.conf
 echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo

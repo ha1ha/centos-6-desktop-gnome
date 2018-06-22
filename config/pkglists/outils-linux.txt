@@ -37,6 +37,7 @@ time
 traceroute
 tree
 unix2dos
+unrar
 unzip
 usbutils
 vim-enhanced

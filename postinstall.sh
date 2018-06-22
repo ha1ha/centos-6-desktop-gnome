@@ -111,11 +111,6 @@ echo -e "[${VERT}OK${GRIS}] \c"
 sleep $DELAY
 echo
 
-
-echo 
-
-exit 0
-
 # Arrêt de PackageKit qui entre en conflit avec Yum
 if ps aux | grep packagekitd | grep -v grep 2>&1 > /dev/null ; then
   echo "::"
@@ -124,8 +119,12 @@ if ps aux | grep packagekitd | grep -v grep 2>&1 > /dev/null ; then
   echo -e "[${VERT}OK${GRIS}] \c"
   sleep $DELAY
   echo
-  echo "::"
 fi
+
+
+echo 
+
+exit 0
 
 # Suppression de PackageKit
 if rpm -q PackageKit > /dev/null ; then
